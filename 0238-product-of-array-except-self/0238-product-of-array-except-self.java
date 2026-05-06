@@ -1,8 +1,6 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
-        int len = nums.length;
-        int prefix[] = new int[len];
-        int postfix[] = new int [len];
+        int len = nums.length; //hello yeah
         int ans[] = new int[len];
         int i = 0;
 
