@@ -4,8 +4,9 @@ class Solution {
         int prefix[] = new int[len];
         int postfix[] = new int [len];
         int ans[] = new int[len];
+        int i = 0;
 
-        for(int i = 0; i<len; i++){
+        for(i = 0; i<len; i++){
             if(i == 0){
                 prefix[i] = nums[i];
             }else{
@@ -13,7 +14,7 @@ class Solution {
             }
         }
 
-        for(int i = len-1; i>=0; i--){
+        for(i = len-1; i>=0; i--){
             if(i == len -1){
                 postfix[i] = nums[i];
             }else{
@@ -21,7 +22,7 @@ class Solution {
             }
         }
 
-        for (int i = 0; i<len; i++){
+        for (i = 0; i<len; i++){
             if(i == 0){
                 ans[i] = postfix[i+1];
             }else if(i == len-1){
