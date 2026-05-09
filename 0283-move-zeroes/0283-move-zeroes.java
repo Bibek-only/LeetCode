@@ -1,22 +1,14 @@
 class Solution {
     public void moveZeroes(int[] nums) {
-        Stack<Integer> zeroStack = new Stack<>();
-        Stack<Integer> nonZeroStack = new Stack<>();
         int len = nums.length;
-        int i = 0;
-        int count = 0;
-        for(i = len-1; i>=0; i--){
-            if(nums[i] == 0 ){
-                zeroStack.push(nums[i]);
-            }else{
-                nonZeroStack.push(nums[i]);
+        int left = 0;
+        for(int right = 0; right<len; right++){
+            if(nums[right] != 0){
+                int temp = nums[right];
+                nums[right] = nums[left];
+                nums[left] = temp;
+                left++;
             }
-        }
-        while(!nonZeroStack.empty()){
-            nums[count++] = nonZeroStack.pop();
-        }
-        while(!zeroStack.empty()){
-            nums[count++] = zeroStack.pop();
         }
     }
 }
