@@ -5,12 +5,12 @@ class Solution {
        int ei = nums.length-1;
        int ans = 0;
        while(si < ei){
-        int currentSum = nums[si] + nums[ei];
-        if(currentSum == k){
+         
+        if(nums[si] + nums[ei] == k){
             ans++;
             si++;
             ei--;
-        }else if(currentSum < k){
+        }else if(nums[si] + nums[ei] < k){
             si++;
         }else{
             ei--;
