@@ -4,10 +4,15 @@ class Solution {
         int len = chars.length;
         int newLen = 0; // track the new modifyed char array
 
+        char currentChar; 
+        int currentCharCount;
+
+        String stringValueOfCurrentCount = "";
+
         for(int i = 0; i<len; i++){
 
-            char currentChar = chars[i]; // to tract the occurance of current consecutive charecter
-            int currentCharCount = 0;
+            currentChar = chars[i]; // to tract the occurance of current consecutive charecter
+            currentCharCount = 0;
 
             while(i<len && currentChar == chars[i]){ //coutnt logic
                 currentCharCount++;
@@ -18,9 +23,9 @@ class Solution {
                 chars[newLen++] = currentChar;
 
                 //convertthe current count to stirng then store each charecter to the array
-                String stringValue = String.valueOf(currentCharCount);
+                stringValueOfCurrentCount = String.valueOf(currentCharCount);
 
-                for (char ch: stringValue.toCharArray()){ // strore each current cout digit to the char array
+                for (char ch: stringValueOfCurrentCount.toCharArray()){ // strore each current cout digit to the char array
                 chars[newLen++] = ch;
 
                 }
