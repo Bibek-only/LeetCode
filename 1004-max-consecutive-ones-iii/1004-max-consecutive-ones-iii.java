@@ -5,7 +5,7 @@ class Solution {
         int currentZeroCount = 0;
         int currentLen = 0;
 
-        for (int i = 0; i<len; i++){
+        for (int i = 0; i<len; i++){ // generate all subarrays having maximum 2 zero and chek the length for updatation
             currentZeroCount = 0;
             for (int j = i; j<len; j++){
                 if(nums[j] == 0){
