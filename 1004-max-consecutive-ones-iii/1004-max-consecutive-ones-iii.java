@@ -5,6 +5,7 @@ class Solution {
         int right = 0;
         int maxLen = 0;
         int count = 0;
+        int currentLen = 0;
 
         while(right < len){
             if(nums[right] == 0){
@@ -17,7 +18,7 @@ class Solution {
                 left++;
                 count--;
             }
-            int currentLen = right - left + 1;
+             currentLen = right - left + 1;
             maxLen = Math.max(currentLen, maxLen);
             right++;
         }
