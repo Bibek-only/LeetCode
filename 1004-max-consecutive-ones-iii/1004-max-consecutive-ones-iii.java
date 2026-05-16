@@ -11,12 +11,9 @@ class Solution {
             if(nums[right] == 0){
                 count++;
             }
-            if(count > k){
-                while(nums[left] != 0){
-                    left++;
-                }
+            while(count > k){
+                if(nums[left] == 0) count--;
                 left++;
-                count--;
             }
              currentLen = right - left + 1;
             maxLen = Math.max(currentLen, maxLen);
