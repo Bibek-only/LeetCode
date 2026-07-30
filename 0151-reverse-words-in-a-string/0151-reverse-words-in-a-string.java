@@ -5,7 +5,7 @@ class Solution {
         int len = strs.length;
         int i = 0; 
         int j = len-1;
-        while(i<j){
+        while(i<=j){
             String temp = strs[i];
             strs[i] = strs[j];
             strs[j] = temp;
