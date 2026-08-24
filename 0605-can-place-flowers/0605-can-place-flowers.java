@@ -1,24 +1,25 @@
 class Solution {
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
         int len = flowerbed.length;
-        int newArr[] = new int[len+2];
-        int newArrLen = len+2;
-        int canPlant = 0;
+        int flowerBed2[] = new int[len+2];
         for(int i = 0; i<len; i++){
-            newArr[i+1] = flowerbed[i];
+            flowerBed2[i+1] = flowerbed[i];
         }
 
-        for(int i = 1; i<newArrLen-1; i++){
-            if( newArr[i-1] == 0 && newArr[i] == 0 && newArr[i+1] == 0){
-                canPlant++;
-                newArr[i] = 1;
+        int canPlace = 0;
+        for(int i = 1; i<=len; i++){
+            if(flowerBed2[i] == 0){
+                if(flowerBed2[i-1] == 0 && flowerBed2[i+1] == 0){
+                    canPlace++;
+                    flowerBed2[i] = 1;
+                }
             }
         }
 
-        if(n>canPlant){
-            return false;
-        }else{
+        if(canPlace >= n){
             return true;
+        }else{
+            return false;
         }
 
     }
